@@ -1,0 +1,27 @@
+[
+    {
+      "id": "trex",
+      "name": "Tyrannosaurus Rex",
+      "image": "images/trex.png",
+      "description": "The T-Rex was one of the largest land carnivores of all time. It lived during the late Cretaceous period and had powerful jaws filled with sharp teeth."
+    },
+    {
+      "id": "raptor",
+      "name": "Velociraptor",
+      "image": "images/raptor.png",
+      "description": "The Velociraptor was a small, fast, and agile dinosaur known for its intelligence. It likely hunted in packs and had a distinctive curved claw."
+    },
+    {
+      "id": "stego",
+      "name": "Stegosaurus",
+      "image": "images/stego.png",
+      "description": "Stegosaurus had a row of large, bony plates along its back and a spiked tail for defense. It was a herbivore from the late Jurassic period."
+    },
+    {
+      "id": "trice",
+      "name": "Triceratops",
+      "image": "images/triceratops.png",
+      "description": "Triceratops is famous for its three horns and large bony frill. It was a herbivorous dinosaur from the late Cretaceous period."
+    }
+  ]
+  

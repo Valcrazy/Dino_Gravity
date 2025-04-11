@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dino Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #eaf6f6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    .dino-image {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .dino-name {
+      font-size: 2rem;
+      margin: 20px 0 10px;
+      color: #22577a;
+    }
+    .dino-desc {
+      font-size: 1.1rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="dino-content">
+    <!-- Content will be injected dynamically -->
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const dinoId = params.get("id");
+
+    fetch("dinos.json")
+      .then(res => res.json())
+      .then(data => {
+        const dino = data.find(d => d.id === dinoId);
+        if (!dino) {
+          document.getElementById("dino-content").innerHTML = "<h2>Dinosaur not found</h2>";
+          return;
+        }
+
+        document.getElementById("dino-content").innerHTML = `
+          <img src="${dino.image}" class="dino-image" alt="${dino.name}">
+          <h1 class="dino-name">${dino.name}</h1>
+          <p class="dino-desc">${dino.description}</p>
+        `;
+      });
+  </script>
+</body>
+</html>
