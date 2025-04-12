@@ -2,9 +2,59 @@
     <head>
         <title>List Of Dinosaurs</title>
     </head>
+    <style>
+      body{
+        background-color: black;
+      }
+      h1{
+        color:crimson
+      }
+      .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 columns */
+  gap: 20px;
+  padding: 20px;
+  
+}
+
+.item {
+  background: steelblue;
+  color: white;
+  font-size: 24px;
+  text-align: left;
+  padding: 30px;
+  border-radius: 10px;
+}
+    </style>
     <body>
-        <h1>List of Dinosaurs</h1>
-        <ul id="dino-list"></ul>
-        <script src="script.js"></script>
+      <h1><marquee>List of Dinosaurs</h1></marquee>
+      <div class="grid-container">
+        <div class="item" id="dinoList"></div>
+        </div>
+
+      
+        
+        <script>
+            // Load JSON from file
+  fetch('dinos.json')
+  .then(response => response.json()) // Convert response to JSON
+  .then(data => {
+    const dinoList = document.getElementById('dinoList');
+
+    // Loop through each dino object in JSON
+    data.forEach(dino => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+
+      link.textContent = dino.name;           // Show dino name
+      link.href = `dino.html?id=${dino.id}`;              // Link to the dino info page
+
+      li.appendChild(link);                   // Add link to list item
+      dinoList.appendChild(li);               // Add list item to <ul>
+    });
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+
+        </script>
     </body>
 </html>
