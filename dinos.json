@@ -14,7 +14,7 @@
     {
       "id": "stego",
       "name": "Stegosaurus",
-      "image": "images/stego.png",
+      "image": "images/stegosaurus.png",
       "description": "Stegosaurus had a row of large, bony plates along its back and a spiked tail for defense. It was a herbivore from the late Jurassic period."
     },
     {
@@ -22,6 +22,12 @@
       "name": "Triceratops",
       "image": "images/triceratops.png",
       "description": "Triceratops is famous for its three horns and large bony frill. It was a herbivorous dinosaur from the late Cretaceous period."
+    },
+    {
+      "id": "ankylo",
+      "name": "Ankylosaurus",
+      "image": "images/ankylo.png",
+      "description": "Ankylosaurus, (genus Ankylosaurus), armoured ornithischian dinosaurs that lived 70 million to 66 million years ago in North America during the Late Cretaceous Period. Ankylosaurus is a genus belonging to a larger group (infraorder Ankylosauria) of related four-legged heavily armoured herbivorous dinosaurs that flourished throughout the Cretaceous Period (145.5 million to 66 million years ago)."
     }
   ]
   
