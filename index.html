@@ -7,11 +7,11 @@
     <title>DINOSAURS</title>
     <script>
         window.onload=function(){
-            alert('click on any dinosaur to see more information about it');
+            alert('Drag and click on any dinosaur to see more information about it');
         };
     </script>
     <style>
-        
+
         body {
             background-image: url("https://i.postimg.cc/hjK3NCJ0/prehistoric-forest-scene-background-free-vector.jpg");
             margin: 0;
@@ -215,18 +215,16 @@
         .result .content {
             font-size: 13px;
         }
+        .vishal{
+            color:red;
+        }
     </style>
 </head>
 
 <body>
 
-    <script src="//cdn.webglstats.com/stat.js" defer async></script>
 
-    <script src="/js/ga.js"></script>
 
-    <script>
-    system.alert('Click on the dinosaur to see more information about it');>
-    </script>
 
     <table id="topbar">
         <tr>
@@ -274,7 +272,7 @@
             <img id="logo1" src="images/branchioil.png"
             width="275" height="95" class="box2d"><br />
     </div>
-   
+   <button class="vishal" onclick ="location.href='list.html';">NORMAL MODE</button>
 
     <div id="footer">
         <a href="http://www.google.com/intl/en/ads/" class="box2d">Advertising Programs</a>
@@ -286,7 +284,9 @@
 
     <!-- <script src="http://www.google.com/uds/api?file=uds.js&v=0.1" type="text/javascript"></script> -->
     <script>
+     
         /* Based on Alex Arnell's inheritance implementation. */
+
         var Class = {
             create: function() {
                 var parent = null,
@@ -478,9 +478,9 @@
                 return results;
             };
         }
+
     </script>
-    <script>
-        /* 
+    <script>     /* 
          * Box2Djs (port of Box2DFlash 1.4.3.1) - http://box2d-js.sourceforge.net/
          * Single-filed and jsmined ( http://code.google.com/p/jsmin-php/ ) by Mr.doob
          */
@@ -6592,7 +6592,7 @@
             enableMotor: null
         });
     </script>
-    <script>
+    <script>   
         var delta = [0, 0];
         var stage = [window.screenX, window.screenY, window.innerWidth, window.innerHeight];
         getBrowserDimensions();
@@ -6843,145 +6843,7 @@
 
         }
 
-        // API STUFF
-
-        /*
-        function search() {
-
-        	if ( !isRunning ) {
-
-        		run();
-
-        	}
-
-        	if ( query == document.getElementById('q').value ) {
-
-        		page ++;
-
-        		gWebSearch.gotoPage( page );
-        		gImageSearch.gotoPage( page );
-
-        	} else {
-
-        		page = 0;
-
-        		query = document.getElementById('q').value;
-
-        		gWebSearch.execute( query );
-        		gImageSearch.execute( query );
-
-        	}
-
-        	return false;
-
-        }
-
-        function imFeelingLucky() {
-
-        	imFeelingLuckyMode = true;
-        	gWebSearch.execute( document.getElementById('q').value );
-
-        	return false;
-
-        }
-
-        function onWebSearch() {
-
-        	if ( imFeelingLuckyMode ) {
-
-        		location.href = gWebSearch.results[0].unescapedUrl;
-        		return;
-
-        	}
-
-        	for ( var i = 0; i < gWebSearch.results.length; i ++ ) {
-
-        		addWeb( gWebSearch.results[i] );
-
-        	}
-
-        }
-
-        function onImageSearch() {
-
-        	for ( var i = 0; i < gImageSearch.results.length; i ++ ) {
-
-        		addImage( gImageSearch.results[i] );
-
-        	}
-
-        }
-
-        function addWeb( data ) {
-
-        	var element = document.createElement('div');
-        	element.innerHTML = '<div class="result"><div class="title"><a href="' + data.unescapedUrl + '" target="_blank">' + data.title + '</a></div><div class="url">' + data.visibleUrl + '</div><div class="content">' + data.content + '</div>';
-
-        	document.body.appendChild( element );
-
-        	properties.push( [ Math.random() * ( window.innerWidth / 2 ), - 200, 546, element.offsetHeight ] );
-
-        	var i = properties.length - 1;
-
-        	element.style.position = 'absolute';
-        	element.style.left = 0 + 'px';
-        	element.style.top = - 100 + 'px';
-        	element.style.backgroundColor = '#ffffff';
-        	element.addEventListener( 'mousedown', onElementMouseDown, false );
-        	element.addEventListener( 'mouseup', onElementMouseUp, false );
-        	element.addEventListener( 'click', onElementClick, false );
-
-        	elements[i] = element;
-
-        	resultBodies.push( bodies[i] = createBox( world, properties[i][0] + ( properties[i][2] >> 1 ), properties[i][1] + ( properties[i][3] >> 1 ), properties[i][2] / 2, properties[i][3] / 2, false, element ) );
-
-        }
-
-        function addImage( data ) {
-
-        	var element = document.createElement( 'img' );
-        	element.style.display = 'none';
-        	element.style.cursor = 'pointer';
-        	element.addEventListener( 'load', function () {
-
-        		properties.push( [ Math.random() * ( window.innerWidth / 2 ), - 200, element.width, element.height ] );
-
-        		var i = properties.length - 1;
-
-        		element.style.display = 'block';
-        		element.style.position = 'absolute';
-        		element.style.left = 0 + 'px';
-        		element.style.top = - 200 + 'px';
-        		element.style.backgroundColor = '#ffffff';
-        		element.addEventListener( 'mousedown', onElementMouseDown, false );
-        		element.addEventListener( 'mouseup', onElementMouseUp, false );
-        		element.addEventListener( 'click', onElementClick, false );
-        		element.addEventListener( 'click', function ( event ) {
-
-        			var range = 5;
-
-        			if ( mouseOnClick[0] < event.clientX + range && mouseOnClick[0] > event.clientX - range &&
-        			     mouseOnClick[1] < event.clientY + range && mouseOnClick[1] > event.clientY - range ) {
-
-        				window.open( data.unescapedUrl );
-
-        			}
-
-        		}, false );
-
-        		elements[i] = element;
-
-        		resultBodies.push( bodies[i] = createBox( world, properties[i][0] + ( properties[i][2] >> 1 ), properties[i][1] + ( properties[i][3] >> 1 ), properties[i][2] / 2, properties[i][3] / 2, false, element ) );
-
-        	}, false );
-        	element.src = data.tbUrl;
-        	document.body.appendChild( element );
-
-        }
-        */
-
-        //
-
+        
         var prevTime;
 
         function loop() {
@@ -7216,6 +7078,7 @@
 
             return changed;
         }
+
     </script>
 
 </body>
